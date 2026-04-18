@@ -1,6 +1,6 @@
 # Sterling Realty — Luxury Real Estate Website
 
-A modern, responsive real estate website for **Marcus Sterling**, a luxury real estate specialist. Features property listings, an AI chatbot assistant, contact form, and dark mode — all in a single-page application.
+A modern, responsive real estate website for **Sterling Realty**, featuring luxury property listings, an AI chatbot assistant, mortgage calculator, contact form, newsletter signup, and dark mode — all in a single-page application.
 
 ## 🌐 Live Site
 
@@ -9,16 +9,18 @@ A modern, responsive real estate website for **Marcus Sterling**, a luxury real 
 ## Features
 
 ### Pages (hash-based routing)
-- **Home** (`#home`) — Hero section, stats bar, about Marcus, services grid, and 5 client testimonials
-- **Listings** (`#listings`) — Filter bar (city, type, price) with 6 luxury property cards and detail modals
+- **Home** (`#home`) — Hero section, stats bar, about Marcus Sterling, services grid, and 5 client testimonials
+- **Listings** (`#listings`) — Filter bar (city, type, price) with 6 luxury property cards, detail modals, and mortgage calculator
 - **Contact** (`#contact`) — Contact form (name, email, phone, interest, budget, message) and info card with office details
 
 ### Interactive Features
 - **AI Chatbot "Max"** — Floating chat assistant with guided flows for Buy, Sell, Rent, and Book Viewing
+- **Mortgage Calculator** — Calculate monthly payments based on home price, down payment, interest rate, and loan term
 - **Dark Mode** — Toggle between light and dark themes with persistent preference (localStorage)
 - **Property Filters** — Filter listings by city, type, and price range
 - **Property Modals** — Click "View Details" to see full property info in an overlay modal
-- **Scroll Animations** — Fade-in elements using IntersectionObserver
+- **Newsletter Signup** — Subscribe to receive the latest listings via email
+- **Scroll Animations** — Reveal-on-scroll elements using IntersectionObserver
 - **Responsive Design** — Mobile hamburger menu, responsive grids, works on all screen sizes
 
 ### Property Listings
@@ -34,8 +36,8 @@ A modern, responsive real estate website for **Marcus Sterling**, a luxury real 
 ## Tech Stack
 
 - **HTML5** — Semantic markup, single `index.html` file
-- **CSS3** — Custom properties, grid, flexbox, keyframe animations, dark theme
-- **Vanilla JavaScript** — Hash routing, DOM manipulation, chatbot logic, filtering
+- **CSS3** — Custom properties (BEM naming), grid, flexbox, keyframe animations, dark theme
+- **Vanilla JavaScript** — Hash routing, DOM manipulation, chatbot logic, filtering, mortgage math
 - **Google Fonts** — Playfair Display (headings) + Inter (body)
 - **Unsplash** — High-quality property and profile images
 
