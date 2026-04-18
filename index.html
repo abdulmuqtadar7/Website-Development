@@ -5,12 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Developer &amp; Designer</title>
   <meta name="description" content="Personal portfolio showcasing projects, skills, and experience.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="John Doe — Full-Stack Developer & UI Designer">
+  <meta property="og:description" content="Personal portfolio showcasing projects, skills, and experience.">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- ===== Skip to content (accessibility) ===== -->
+  <a href="#hero" class="skip-link">Skip to main content</a>
+
+  <!-- ===== Scroll Progress Bar ===== -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
   <!-- ===== Navigation ===== -->
   <header class="header" id="header">
     <nav class="nav container">
@@ -19,6 +31,8 @@
       <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="hamburger"></span>
       </button>
+
+      <div class="nav__overlay" id="nav-overlay"></div>
 
       <ul class="nav__menu" id="nav-menu">
         <li class="nav__item"><a href="#hero" class="nav__link active">Home</a></li>
@@ -34,7 +48,9 @@
     <div class="container hero__container">
       <p class="hero__greeting">Hello, I&rsquo;m</p>
       <h1 class="hero__title">John Doe</h1>
-      <p class="hero__subtitle">Full-Stack Developer &amp; UI Designer</p>
+      <p class="hero__subtitle">
+        I build&nbsp;<span class="typewriter" id="typewriter"></span><span class="typewriter__cursor" aria-hidden="true">|</span>
+      </p>
       <p class="hero__description">
         I craft responsive, accessible, and performant web experiences that bring ideas to life.
       </p>
@@ -43,6 +59,7 @@
         <a href="#contact" class="btn btn--outline">Get in Touch</a>
       </div>
     </div>
+    <div class="hero__glow" aria-hidden="true"></div>
   </section>
 
   <!-- ===== About Section ===== -->
@@ -86,12 +103,20 @@
       <h2 class="section__title">Projects</h2>
       <p class="section__subtitle">A selection of my recent work</p>
 
+      <!-- Filter Tabs -->
+      <div class="projects__filters" role="tablist" aria-label="Filter projects">
+        <button class="filter__btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter__btn" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack</button>
+        <button class="filter__btn" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+        <button class="filter__btn" data-filter="tools" role="tab" aria-selected="false">Tools</button>
+      </div>
+
       <div class="projects__grid">
         <!-- Project 1 -->
-        <article class="project__card">
+        <article class="project__card" data-category="fullstack">
           <div class="project__image">
             <div class="project__placeholder">
-              <span>Project 1</span>
+              <span>&#128722;</span>
             </div>
           </div>
           <div class="project__content">
@@ -113,10 +138,10 @@
         </article>
 
         <!-- Project 2 -->
-        <article class="project__card">
+        <article class="project__card" data-category="fullstack">
           <div class="project__image">
             <div class="project__placeholder">
-              <span>Project 2</span>
+              <span>&#9745;</span>
             </div>
           </div>
           <div class="project__content">
@@ -138,10 +163,10 @@
         </article>
 
         <!-- Project 3 -->
-        <article class="project__card">
+        <article class="project__card" data-category="frontend">
           <div class="project__image">
             <div class="project__placeholder">
-              <span>Project 3</span>
+              <span>&#9925;</span>
             </div>
           </div>
           <div class="project__content">
@@ -163,10 +188,10 @@
         </article>
 
         <!-- Project 4 -->
-        <article class="project__card">
+        <article class="project__card" data-category="tools">
           <div class="project__image">
             <div class="project__placeholder">
-              <span>Project 4</span>
+              <span>&#9881;</span>
             </div>
           </div>
           <div class="project__content">
@@ -183,6 +208,56 @@
             <div class="project__links">
               <a href="#" class="btn btn--small" aria-label="View live demo of Portfolio Generator">Live Demo</a>
               <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Portfolio Generator">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project__card" data-category="frontend">
+          <div class="project__image">
+            <div class="project__placeholder">
+              <span>&#127912;</span>
+            </div>
+          </div>
+          <div class="project__content">
+            <h3 class="project__title">Design System</h3>
+            <p class="project__description">
+              A comprehensive UI component library with theming support,
+              accessibility baked in, and interactive documentation.
+            </p>
+            <ul class="project__tags">
+              <li>React</li>
+              <li>Storybook</li>
+              <li>CSS-in-JS</li>
+            </ul>
+            <div class="project__links">
+              <a href="#" class="btn btn--small" aria-label="View live demo of Design System">Live Demo</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Design System">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project__card" data-category="tools">
+          <div class="project__image">
+            <div class="project__placeholder">
+              <span>&#128202;</span>
+            </div>
+          </div>
+          <div class="project__content">
+            <h3 class="project__title">Analytics Dashboard</h3>
+            <p class="project__description">
+              A real-time analytics dashboard with customizable widgets,
+              data export capabilities, and role-based access control.
+            </p>
+            <ul class="project__tags">
+              <li>Vue.js</li>
+              <li>D3.js</li>
+              <li>Firebase</li>
+            </ul>
+            <div class="project__links">
+              <a href="#" class="btn btn--small" aria-label="View live demo of Analytics Dashboard">Live Demo</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Analytics Dashboard">Source Code</a>
             </div>
           </div>
         </article>
@@ -237,7 +312,7 @@
               required
               autocomplete="name"
             >
-            <span class="form__error" id="name-error"></span>
+            <span class="form__error" id="name-error" role="alert"></span>
           </div>
 
           <div class="form__group">
@@ -251,7 +326,7 @@
               required
               autocomplete="email"
             >
-            <span class="form__error" id="email-error"></span>
+            <span class="form__error" id="email-error" role="alert"></span>
           </div>
 
           <div class="form__group">
@@ -264,11 +339,11 @@
               rows="5"
               required
             ></textarea>
-            <span class="form__error" id="message-error"></span>
+            <span class="form__error" id="message-error" role="alert"></span>
           </div>
 
           <button type="submit" class="btn btn--primary btn--full">Send Message</button>
-          <p class="form__status" id="form-status"></p>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -277,10 +352,20 @@
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="container footer__container">
-      <p>&copy; <span id="current-year"></span> John Doe. All rights reserved.</p>
-      <a href="#hero" class="footer__back-to-top" aria-label="Back to top">&uarr; Top</a>
+      <a href="#hero" class="footer__logo">Portfolio<span class="accent">.</span></a>
+      <div class="footer__socials">
+        <a href="#" class="footer__social-link" aria-label="GitHub profile">GitHub</a>
+        <a href="#" class="footer__social-link" aria-label="LinkedIn profile">LinkedIn</a>
+        <a href="#" class="footer__social-link" aria-label="Twitter profile">Twitter</a>
+      </div>
+      <p class="footer__copy">&copy; <span id="current-year"></span> John Doe. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- ===== Back to Top Button ===== -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    &uarr;
+  </button>
 
   <script src="js/main.js"></script>
 </body>

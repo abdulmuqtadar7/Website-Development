@@ -6,13 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   /* ---------- DOM References ---------- */
-  const header      = document.getElementById('header');
-  const navToggle   = document.getElementById('nav-toggle');
-  const navMenu     = document.getElementById('nav-menu');
-  const navLinks    = document.querySelectorAll('.nav__link');
-  const contactForm = document.getElementById('contact-form');
-  const formStatus  = document.getElementById('form-status');
-  const yearSpan    = document.getElementById('current-year');
+  const header         = document.getElementById('header');
+  const navToggle      = document.getElementById('nav-toggle');
+  const navMenu        = document.getElementById('nav-menu');
+  const navOverlay     = document.getElementById('nav-overlay');
+  const navLinks       = document.querySelectorAll('.nav__link');
+  const contactForm    = document.getElementById('contact-form');
+  const formStatus     = document.getElementById('form-status');
+  const yearSpan       = document.getElementById('current-year');
+  const scrollProgress = document.getElementById('scroll-progress');
+  const backToTopBtn   = document.getElementById('back-to-top');
+  const filterBtns     = document.querySelectorAll('.filter__btn');
+  const projectCards   = document.querySelectorAll('.project__card');
 
   /* ---------- Set current year ---------- */
   if (yearSpan) {
@@ -20,11 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- Mobile Navigation ---------- */
-  function toggleMenu() {
-    const isOpen = navMenu.classList.toggle('open');
-    navToggle.classList.toggle('active');
-    navToggle.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  function openMenu() {
+    navMenu.classList.add('open');
+    navToggle.classList.add('active');
+    navToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    if (navOverlay) {
+      navOverlay.classList.add('visible');
+    }
   }
 
   function closeMenu() {
@@ -32,10 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.classList.remove('active');
     navToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    if (navOverlay) {
+      navOverlay.classList.remove('visible');
+    }
+  }
+
+  function toggleMenu() {
+    if (navMenu.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   }
 
   if (navToggle) {
     navToggle.addEventListener('click', toggleMenu);
+  }
+
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeMenu);
   }
 
   navLinks.forEach(link => {
@@ -90,15 +113,115 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ---------- Scroll Progress Bar ---------- */
+  function updateScrollProgress() {
+    if (!scrollProgress) return;
+    const scrollTop    = window.scrollY;
+    const docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = scrollPercent + '%';
+  }
+
+  /* ---------- Back to Top Button ---------- */
+  function updateBackToTop() {
+    if (!backToTopBtn) return;
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  }
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ---------- Combined scroll handler ---------- */
   window.addEventListener('scroll', () => {
     highlightNavOnScroll();
     handleHeaderScroll();
+    updateScrollProgress();
+    updateBackToTop();
   }, { passive: true });
+
+  /* ---------- Typewriter Effect ---------- */
+  const typewriterEl = document.getElementById('typewriter');
+  if (typewriterEl) {
+    const phrases = [
+      'web applications.',
+      'user interfaces.',
+      'scalable APIs.',
+      'great experiences.'
+    ];
+    let phraseIndex   = 0;
+    let charIndex     = 0;
+    let isDeleting    = false;
+    const typeSpeed   = 80;
+    const deleteSpeed = 50;
+    const pauseTime   = 1800;
+
+    function type() {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (!isDeleting) {
+        typewriterEl.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(type, pauseTime);
+          return;
+        }
+        setTimeout(type, typeSpeed);
+      } else {
+        typewriterEl.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+        setTimeout(type, deleteSpeed);
+      }
+    }
+
+    // Start after hero animations finish
+    setTimeout(type, 900);
+  }
+
+  /* ---------- Project Filter Tabs ---------- */
+  if (filterBtns.length > 0 && projectCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active button
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Filter cards
+        projectCards.forEach(card => {
+          const category = card.dataset.category;
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
 
   /* ---------- Scroll-reveal animation ---------- */
   const revealElements = document.querySelectorAll(
     '.section__title, .section__subtitle, .about__text, .about__skills, ' +
-    '.project__card, .contact__info, .contact__form'
+    '.project__card, .contact__info, .contact__form, .projects__filters'
   );
 
   revealElements.forEach(el => el.classList.add('reveal'));
@@ -172,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Simulate form submission
       const submitBtn     = contactForm.querySelector('button[type="submit"]');
       submitBtn.disabled  = true;
-      submitBtn.textContent = 'Sending…';
+      submitBtn.textContent = 'Sending\u2026';
 
       setTimeout(() => {
         contactForm.reset();
