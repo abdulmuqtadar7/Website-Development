@@ -1,20 +1,24 @@
 # Personal Portfolio Website
 
-A modern, responsive personal portfolio website with a dark theme and clean typography.
+A modern, responsive personal portfolio website with a dark theme, clean typography, and interactive features.
 
 ## Features
 
-- **Navigation Bar** — Fixed header with smooth-scroll links and a mobile hamburger menu
-- **Hero Section** — Eye-catching introduction with call-to-action buttons
+- **Navigation Bar** — Fixed header with smooth-scroll links, mobile hamburger menu, and backdrop overlay
+- **Hero Section** — Eye-catching introduction with typewriter animation and animated glow effect
 - **About Section** — Bio and skills grid with technology list
-- **Projects Gallery** — Responsive card grid showcasing projects with tags and links
-- **Contact Form** — Client-side validated form with live feedback
-- **Scroll Animations** — Elements animate into view as you scroll
+- **Projects Gallery** — Responsive card grid with category filter tabs (All / Full-Stack / Frontend / Tools)
+- **Contact Form** — Client-side validated form with live feedback and focus ring states
+- **Scroll Progress Bar** — Visual indicator of page scroll position at the top
+- **Back to Top Button** — Floating button that appears on scroll
+- **Scroll Animations** — Staggered reveal animations as you scroll
+- **Accessibility** — Skip-to-content link, ARIA attributes, `role="alert"` on errors, `prefers-reduced-motion` support
+- **SEO** — Open Graph meta tags for social sharing
 - **Fully Responsive** — Looks great on mobile, tablet, and desktop
 
 ## Tech Stack
 
-- HTML5, CSS3 (custom properties, grid, flexbox)
+- HTML5, CSS3 (custom properties, grid, flexbox, keyframe animations)
 - Vanilla JavaScript (no frameworks or dependencies)
 - Google Fonts (Inter, JetBrains Mono)
 
@@ -42,3 +46,4 @@ A modern, responsive personal portfolio website with a dark theme and clean typo
 - Replace **John Doe** and placeholder text in `index.html` with your own information.
 - Swap project placeholders with screenshots or images.
 - Update social/contact links to point to your profiles.
+- Edit the `phrases` array in `js/main.js` to change the typewriter text.
