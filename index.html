@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Developer &amp; Designer</title>
-  <meta name="description" content="Personal portfolio showcasing projects, skills, and experience.">
+  <title>Marcus Sterling | Your Trusted Real Estate Expert</title>
+  <meta name="description" content="Marcus Sterling — Your Trusted Real Estate Expert. Browse luxury properties, modern villas, city penthouses, and family homes.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="John Doe — Full-Stack Developer & UI Designer">
-  <meta property="og:description" content="Personal portfolio showcasing projects, skills, and experience.">
+  <meta property="og:title" content="Marcus Sterling — Your Trusted Real Estate Expert">
+  <meta property="og:description" content="Browse luxury properties, modern villas, city penthouses, and family homes with Marcus Sterling.">
   <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="css/styles.css">
@@ -26,7 +26,7 @@
   <!-- ===== Navigation ===== -->
   <header class="header" id="header">
     <nav class="nav container">
-      <a href="#hero" class="nav__logo">Portfolio<span class="accent">.</span></a>
+      <a href="#hero" class="nav__logo">Sterling<span class="accent">.</span></a>
 
       <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="hamburger"></span>
@@ -37,7 +37,7 @@
       <ul class="nav__menu" id="nav-menu">
         <li class="nav__item"><a href="#hero" class="nav__link active">Home</a></li>
         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#listings" class="nav__link">Listings</a></li>
         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
     </nav>
@@ -45,219 +45,206 @@
 
   <!-- ===== Hero Section ===== -->
   <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img
+        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&amp;q=80"
+        alt="Luxury modern home with large windows and a manicured lawn at golden hour"
+        loading="lazy"
+        class="hero__bg-img"
+      >
+      <div class="hero__bg-overlay" aria-hidden="true"></div>
+    </div>
     <div class="container hero__container">
-      <p class="hero__greeting">Hello, I&rsquo;m</p>
-      <h1 class="hero__title">John Doe</h1>
+      <p class="hero__greeting">Welcome, I&rsquo;m</p>
+      <h1 class="hero__title">Marcus Sterling</h1>
       <p class="hero__subtitle">
-        I build&nbsp;<span class="typewriter" id="typewriter"></span><span class="typewriter__cursor" aria-hidden="true">|</span>
+        <span class="typewriter" id="typewriter"></span><span class="typewriter__cursor" aria-hidden="true">|</span>
       </p>
       <p class="hero__description">
-        I craft responsive, accessible, and performant web experiences that bring ideas to life.
+        Your Trusted Real Estate Expert &mdash; helping you find the perfect property to call home.
       </p>
       <div class="hero__actions">
-        <a href="#projects" class="btn btn--primary">View My Work</a>
-        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+        <a href="#listings" class="btn btn--primary">Browse Listings</a>
+        <a href="#contact" class="btn btn--outline">Schedule a Consultation</a>
       </div>
     </div>
-    <div class="hero__glow" aria-hidden="true"></div>
   </section>
 
   <!-- ===== About Section ===== -->
   <section class="about section" id="about">
     <div class="container">
       <h2 class="section__title">About Me</h2>
-      <p class="section__subtitle">A glimpse into who I am</p>
+      <p class="section__subtitle">Your partner in finding the perfect home</p>
 
       <div class="about__grid">
-        <div class="about__text">
-          <p>
-            I&rsquo;m a passionate developer with over 5 years of experience building
-            modern web applications. I specialize in creating clean, efficient, and
-            user-friendly solutions that solve real-world problems.
-          </p>
-          <p>
-            When I&rsquo;m not coding, you&rsquo;ll find me exploring new technologies,
-            contributing to open-source projects, or sharing knowledge with the developer
-            community.
-          </p>
+        <div class="about__photo-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&amp;q=80"
+            alt="Marcus Sterling, real estate agent, professional headshot in a business suit"
+            loading="lazy"
+            class="about__headshot"
+          >
         </div>
 
-        <div class="about__skills">
-          <h3 class="about__skills-title">Technologies I Work With</h3>
-          <ul class="skills__list">
-            <li class="skill__item">HTML &amp; CSS</li>
-            <li class="skill__item">JavaScript / TypeScript</li>
-            <li class="skill__item">React &amp; Next.js</li>
-            <li class="skill__item">Node.js &amp; Express</li>
-            <li class="skill__item">Python &amp; Django</li>
-            <li class="skill__item">PostgreSQL &amp; MongoDB</li>
-          </ul>
+        <div class="about__text">
+          <p>
+            I&rsquo;m Marcus Sterling, a dedicated real estate professional with over
+            10 years of experience helping clients buy, sell, and invest in properties
+            across the metropolitan area. I specialize in luxury homes, urban penthouses,
+            and family residences.
+          </p>
+          <p>
+            My approach is simple: listen to your needs, provide expert market insight,
+            and guide you through every step of the transaction. Whether you&rsquo;re a
+            first-time buyer or a seasoned investor, I&rsquo;m here to make the process
+            seamless and rewarding.
+          </p>
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__number">200+</span>
+              <span class="stat__label">Homes Sold</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">10+</span>
+              <span class="stat__label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">98%</span>
+              <span class="stat__label">Client Satisfaction</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Projects Section ===== -->
-  <section class="projects section" id="projects">
+  <!-- ===== Listings Section ===== -->
+  <section class="projects section" id="listings">
     <div class="container">
-      <h2 class="section__title">Projects</h2>
-      <p class="section__subtitle">A selection of my recent work</p>
+      <h2 class="section__title">Featured Listings</h2>
+      <p class="section__subtitle">Explore hand-picked properties available now</p>
 
       <!-- Filter Tabs -->
-      <div class="projects__filters" role="tablist" aria-label="Filter projects">
+      <div class="projects__filters" role="tablist" aria-label="Filter property listings">
         <button class="filter__btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="filter__btn" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack</button>
-        <button class="filter__btn" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
-        <button class="filter__btn" data-filter="tools" role="tab" aria-selected="false">Tools</button>
+        <button class="filter__btn" data-filter="luxury" role="tab" aria-selected="false">Luxury</button>
+        <button class="filter__btn" data-filter="urban" role="tab" aria-selected="false">Urban</button>
+        <button class="filter__btn" data-filter="family" role="tab" aria-selected="false">Family</button>
       </div>
 
       <div class="projects__grid">
-        <!-- Project 1 -->
-        <article class="project__card" data-category="fullstack">
+        <!-- Property 1 — Modern Villa -->
+        <article class="project__card" data-category="luxury">
           <div class="project__image">
-            <div class="project__placeholder">
-              <span>&#128722;</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&amp;q=80"
+              alt="Modern villa with an infinity pool and floor-to-ceiling glass walls surrounded by tropical landscaping"
+              loading="lazy"
+              class="project__img"
+            >
           </div>
           <div class="project__content">
-            <h3 class="project__title">E-Commerce Platform</h3>
+            <h3 class="project__title">Modern Villa</h3>
+            <p class="project__price">$2,450,000</p>
             <p class="project__description">
-              A full-stack e-commerce solution with real-time inventory management,
-              payment integration, and an admin dashboard.
+              Stunning 5-bed, 4-bath modern villa featuring an infinity pool,
+              open-concept living, and panoramic hillside views.
             </p>
             <ul class="project__tags">
-              <li>React</li>
-              <li>Node.js</li>
-              <li>MongoDB</li>
+              <li>5 Beds</li>
+              <li>4 Baths</li>
+              <li>4,200 sqft</li>
             </ul>
             <div class="project__links">
-              <a href="#" class="btn btn--small" aria-label="View live demo of E-Commerce Platform">Live Demo</a>
-              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of E-Commerce Platform">Source Code</a>
+              <a href="#contact" class="btn btn--small btn--primary" aria-label="Inquire about Modern Villa">Inquire Now</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View details of Modern Villa">View Details</a>
             </div>
           </div>
         </article>
 
-        <!-- Project 2 -->
-        <article class="project__card" data-category="fullstack">
+        <!-- Property 2 — City Penthouse -->
+        <article class="project__card" data-category="urban">
           <div class="project__image">
-            <div class="project__placeholder">
-              <span>&#9745;</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&amp;q=80"
+              alt="Luxurious city penthouse exterior with contemporary architecture and a rooftop terrace"
+              loading="lazy"
+              class="project__img"
+            >
           </div>
           <div class="project__content">
-            <h3 class="project__title">Task Management App</h3>
+            <h3 class="project__title">City Penthouse</h3>
+            <p class="project__price">$1,850,000</p>
             <p class="project__description">
-              A collaborative task management tool with drag-and-drop boards,
-              real-time updates, and team workspaces.
+              Elegant 3-bed penthouse in the heart of downtown with skyline views,
+              a private rooftop terrace, and concierge service.
             </p>
             <ul class="project__tags">
-              <li>Next.js</li>
-              <li>TypeScript</li>
-              <li>PostgreSQL</li>
+              <li>3 Beds</li>
+              <li>3 Baths</li>
+              <li>2,800 sqft</li>
             </ul>
             <div class="project__links">
-              <a href="#" class="btn btn--small" aria-label="View live demo of Task Management App">Live Demo</a>
-              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Task Management App">Source Code</a>
+              <a href="#contact" class="btn btn--small btn--primary" aria-label="Inquire about City Penthouse">Inquire Now</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View details of City Penthouse">View Details</a>
             </div>
           </div>
         </article>
 
-        <!-- Project 3 -->
-        <article class="project__card" data-category="frontend">
+        <!-- Property 3 — Family Home -->
+        <article class="project__card" data-category="family">
           <div class="project__image">
-            <div class="project__placeholder">
-              <span>&#9925;</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&amp;q=80"
+              alt="Charming two-story family home with a white exterior, front porch, and green lawn"
+              loading="lazy"
+              class="project__img"
+            >
           </div>
           <div class="project__content">
-            <h3 class="project__title">Weather Dashboard</h3>
+            <h3 class="project__title">Family Home</h3>
+            <p class="project__price">$685,000</p>
             <p class="project__description">
-              A weather dashboard with location-based forecasts, interactive maps,
-              and historical data visualization.
+              Spacious 4-bed, 3-bath family home in a top-rated school district
+              with a large backyard, two-car garage, and updated kitchen.
             </p>
             <ul class="project__tags">
-              <li>JavaScript</li>
-              <li>REST API</li>
-              <li>Chart.js</li>
+              <li>4 Beds</li>
+              <li>3 Baths</li>
+              <li>2,600 sqft</li>
             </ul>
             <div class="project__links">
-              <a href="#" class="btn btn--small" aria-label="View live demo of Weather Dashboard">Live Demo</a>
-              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Weather Dashboard">Source Code</a>
+              <a href="#contact" class="btn btn--small btn--primary" aria-label="Inquire about Family Home">Inquire Now</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View details of Family Home">View Details</a>
             </div>
           </div>
         </article>
 
-        <!-- Project 4 -->
-        <article class="project__card" data-category="tools">
+        <!-- Property 4 — Luxury Condo -->
+        <article class="project__card" data-category="urban">
           <div class="project__image">
-            <div class="project__placeholder">
-              <span>&#9881;</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&amp;q=80"
+              alt="Sleek luxury condominium building with balconies and a modern glass facade"
+              loading="lazy"
+              class="project__img"
+            >
           </div>
           <div class="project__content">
-            <h3 class="project__title">Portfolio Generator</h3>
+            <h3 class="project__title">Luxury Condo</h3>
+            <p class="project__price">$920,000</p>
             <p class="project__description">
-              A CLI tool that generates customizable portfolio websites from
-              a simple configuration file.
+              Premium 2-bed, 2-bath condo with floor-to-ceiling windows,
+              in-unit laundry, and resort-style amenities including pool and gym.
             </p>
             <ul class="project__tags">
-              <li>Python</li>
-              <li>Jinja2</li>
-              <li>CLI</li>
+              <li>2 Beds</li>
+              <li>2 Baths</li>
+              <li>1,400 sqft</li>
             </ul>
             <div class="project__links">
-              <a href="#" class="btn btn--small" aria-label="View live demo of Portfolio Generator">Live Demo</a>
-              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Portfolio Generator">Source Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 5 -->
-        <article class="project__card" data-category="frontend">
-          <div class="project__image">
-            <div class="project__placeholder">
-              <span>&#127912;</span>
-            </div>
-          </div>
-          <div class="project__content">
-            <h3 class="project__title">Design System</h3>
-            <p class="project__description">
-              A comprehensive UI component library with theming support,
-              accessibility baked in, and interactive documentation.
-            </p>
-            <ul class="project__tags">
-              <li>React</li>
-              <li>Storybook</li>
-              <li>CSS-in-JS</li>
-            </ul>
-            <div class="project__links">
-              <a href="#" class="btn btn--small" aria-label="View live demo of Design System">Live Demo</a>
-              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Design System">Source Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 6 -->
-        <article class="project__card" data-category="tools">
-          <div class="project__image">
-            <div class="project__placeholder">
-              <span>&#128202;</span>
-            </div>
-          </div>
-          <div class="project__content">
-            <h3 class="project__title">Analytics Dashboard</h3>
-            <p class="project__description">
-              A real-time analytics dashboard with customizable widgets,
-              data export capabilities, and role-based access control.
-            </p>
-            <ul class="project__tags">
-              <li>Vue.js</li>
-              <li>D3.js</li>
-              <li>Firebase</li>
-            </ul>
-            <div class="project__links">
-              <a href="#" class="btn btn--small" aria-label="View live demo of Analytics Dashboard">Live Demo</a>
-              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Analytics Dashboard">Source Code</a>
+              <a href="#contact" class="btn btn--small btn--primary" aria-label="Inquire about Luxury Condo">Inquire Now</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View details of Luxury Condo">View Details</a>
             </div>
           </div>
         </article>
@@ -269,7 +256,7 @@
   <section class="contact section" id="contact">
     <div class="container">
       <h2 class="section__title">Get in Touch</h2>
-      <p class="section__subtitle">Have a project in mind? Let&rsquo;s talk.</p>
+      <p class="section__subtitle">Ready to find your dream home? Let&rsquo;s talk.</p>
 
       <div class="contact__grid">
         <div class="contact__info">
@@ -277,24 +264,24 @@
             <span class="contact__icon" aria-hidden="true">&#9993;</span>
             <div>
               <h3>Email</h3>
-              <p>hello@johndoe.dev</p>
+              <p>marcus@sterlingrealty.com</p>
             </div>
           </div>
           <div class="contact__item">
             <span class="contact__icon" aria-hidden="true">&#9742;</span>
             <div>
-              <h3>Location</h3>
-              <p>San Francisco, CA</p>
+              <h3>Office</h3>
+              <p>123 Main Street, Suite 200<br>San Francisco, CA 94105</p>
             </div>
           </div>
           <div class="contact__item">
             <span class="contact__icon" aria-hidden="true">&#128279;</span>
             <div>
-              <h3>Social</h3>
+              <h3>Connect</h3>
               <div class="social__links">
-                <a href="#" class="social__link" aria-label="GitHub profile">GitHub</a>
                 <a href="#" class="social__link" aria-label="LinkedIn profile">LinkedIn</a>
-                <a href="#" class="social__link" aria-label="Twitter profile">Twitter</a>
+                <a href="#" class="social__link" aria-label="Instagram profile">Instagram</a>
+                <a href="#" class="social__link" aria-label="Facebook profile">Facebook</a>
               </div>
             </div>
           </div>
@@ -335,7 +322,7 @@
               id="message"
               name="message"
               class="form__input form__textarea"
-              placeholder="Tell me about your project&hellip;"
+              placeholder="Tell me about the property you&rsquo;re looking for&hellip;"
               rows="5"
               required
             ></textarea>
@@ -352,13 +339,13 @@
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="container footer__container">
-      <a href="#hero" class="footer__logo">Portfolio<span class="accent">.</span></a>
+      <a href="#hero" class="footer__logo">Sterling<span class="accent">.</span></a>
       <div class="footer__socials">
-        <a href="#" class="footer__social-link" aria-label="GitHub profile">GitHub</a>
         <a href="#" class="footer__social-link" aria-label="LinkedIn profile">LinkedIn</a>
-        <a href="#" class="footer__social-link" aria-label="Twitter profile">Twitter</a>
+        <a href="#" class="footer__social-link" aria-label="Instagram profile">Instagram</a>
+        <a href="#" class="footer__social-link" aria-label="Facebook profile">Facebook</a>
       </div>
-      <p class="footer__copy">&copy; <span id="current-year"></span> John Doe. All rights reserved.</p>
+      <p class="footer__copy">&copy; <span id="current-year"></span> Marcus Sterling. All rights reserved.</p>
     </div>
   </footer>
 

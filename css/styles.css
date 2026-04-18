@@ -331,6 +331,25 @@ img {
   background-color: var(--clr-bg);
 }
 
+/* Hero background image */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 10, 15, 0.82) 0%, rgba(10, 10, 15, 0.55) 100%);
+}
+
 .hero__container {
   max-width: 720px;
   position: relative;
@@ -405,33 +424,30 @@ img {
   }
 }
 
-/* Hero animated glow */
-.hero__glow {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(108, 99, 255, 0.12) 0%, transparent 70%);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: glowPulse 6s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes glowPulse {
-  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1;   }
-}
+/* Hero animated glow — replaced by background image */
 
 /* ===================================================
    About Section
    =================================================== */
 .about__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   gap: 3rem;
   align-items: start;
+}
+
+.about__photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.about__headshot {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--clr-accent);
+  box-shadow: 0 8px 32px rgba(108, 99, 255, 0.25);
 }
 
 .about__text p {
@@ -439,31 +455,26 @@ img {
   color: var(--clr-text-muted);
 }
 
-.about__skills-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.about__stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
-.skills__list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
+.stat {
+  text-align: center;
 }
 
-.skill__item {
-  font-family: var(--ff-mono);
-  font-size: 0.9rem;
-  color: var(--clr-text-muted);
-  padding-left: 1.25rem;
-  position: relative;
-}
-
-.skill__item::before {
-  content: '\25B9';
-  position: absolute;
-  left: 0;
+.stat__number {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
   color: var(--clr-accent);
+}
+
+.stat__label {
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
 }
 
 /* ===================================================
@@ -536,6 +547,17 @@ img {
   overflow: hidden;
 }
 
+.project__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project__card:hover .project__img {
+  transform: scale(1.05);
+}
+
 .project__placeholder {
   width: 100%;
   height: 100%;
@@ -558,6 +580,13 @@ img {
 .project__title {
   font-size: 1.15rem;
   font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.project__price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--clr-accent);
   margin-bottom: 0.5rem;
 }
 
@@ -863,6 +892,19 @@ img {
     gap: 2rem;
   }
 
+  .about__photo-wrap {
+    justify-content: center;
+  }
+
+  .about__headshot {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about__stats {
+    justify-content: center;
+  }
+
   /* Projects grid */
   .projects__grid {
     grid-template-columns: 1fr;
@@ -876,12 +918,6 @@ img {
 
   .hero__title {
     font-size: clamp(2rem, 8vw, 3.5rem);
-  }
-
-  /* Hero glow smaller on mobile */
-  .hero__glow {
-    width: 350px;
-    height: 350px;
   }
 }
 
@@ -897,6 +933,12 @@ img {
 
   .skills__list {
     grid-template-columns: 1fr;
+  }
+
+  .about__stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
   .back-to-top {
@@ -922,10 +964,6 @@ img {
   .reveal {
     opacity: 1;
     transform: none;
-  }
-
-  .hero__glow {
-    animation: none;
   }
 
   .typewriter__cursor {

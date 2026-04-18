@@ -150,10 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const typewriterEl = document.getElementById('typewriter');
   if (typewriterEl) {
     const phrases = [
-      'web applications.',
-      'user interfaces.',
-      'scalable APIs.',
-      'great experiences.'
+      'luxury homes.',
+      'dream properties.',
+      'smart investments.',
+      'your next chapter.'
     ];
     let phraseIndex   = 0;
     let charIndex     = 0;
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Scroll-reveal animation ---------- */
   const revealElements = document.querySelectorAll(
-    '.section__title, .section__subtitle, .about__text, .about__skills, ' +
+    '.section__title, .section__subtitle, .about__photo-wrap, .about__text, .about__skills, ' +
     '.project__card, .contact__info, .contact__form, .projects__filters'
   );
 
