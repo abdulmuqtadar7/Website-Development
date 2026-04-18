@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Developer &amp; Designer</title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills, and experience.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ===== Navigation ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav__logo">Portfolio<span class="accent">.</span></a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li class="nav__item"><a href="#hero" class="nav__link active">Home</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero__container">
+      <p class="hero__greeting">Hello, I&rsquo;m</p>
+      <h1 class="hero__title">John Doe</h1>
+      <p class="hero__subtitle">Full-Stack Developer &amp; UI Designer</p>
+      <p class="hero__description">
+        I craft responsive, accessible, and performant web experiences that bring ideas to life.
+      </p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2 class="section__title">About Me</h2>
+      <p class="section__subtitle">A glimpse into who I am</p>
+
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            I&rsquo;m a passionate developer with over 5 years of experience building
+            modern web applications. I specialize in creating clean, efficient, and
+            user-friendly solutions that solve real-world problems.
+          </p>
+          <p>
+            When I&rsquo;m not coding, you&rsquo;ll find me exploring new technologies,
+            contributing to open-source projects, or sharing knowledge with the developer
+            community.
+          </p>
+        </div>
+
+        <div class="about__skills">
+          <h3 class="about__skills-title">Technologies I Work With</h3>
+          <ul class="skills__list">
+            <li class="skill__item">HTML &amp; CSS</li>
+            <li class="skill__item">JavaScript / TypeScript</li>
+            <li class="skill__item">React &amp; Next.js</li>
+            <li class="skill__item">Node.js &amp; Express</li>
+            <li class="skill__item">Python &amp; Django</li>
+            <li class="skill__item">PostgreSQL &amp; MongoDB</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects Section ===== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <h2 class="section__title">Projects</h2>
+      <p class="section__subtitle">A selection of my recent work</p>
+
+      <div class="projects__grid">
+        <!-- Project 1 -->
+        <article class="project__card">
+          <div class="project__image">
+            <div class="project__placeholder">
+              <span>Project 1</span>
+            </div>
+          </div>
+          <div class="project__content">
+            <h3 class="project__title">E-Commerce Platform</h3>
+            <p class="project__description">
+              A full-stack e-commerce solution with real-time inventory management,
+              payment integration, and an admin dashboard.
+            </p>
+            <ul class="project__tags">
+              <li>React</li>
+              <li>Node.js</li>
+              <li>MongoDB</li>
+            </ul>
+            <div class="project__links">
+              <a href="#" class="btn btn--small" aria-label="View live demo of E-Commerce Platform">Live Demo</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of E-Commerce Platform">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project__card">
+          <div class="project__image">
+            <div class="project__placeholder">
+              <span>Project 2</span>
+            </div>
+          </div>
+          <div class="project__content">
+            <h3 class="project__title">Task Management App</h3>
+            <p class="project__description">
+              A collaborative task management tool with drag-and-drop boards,
+              real-time updates, and team workspaces.
+            </p>
+            <ul class="project__tags">
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>PostgreSQL</li>
+            </ul>
+            <div class="project__links">
+              <a href="#" class="btn btn--small" aria-label="View live demo of Task Management App">Live Demo</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Task Management App">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project__card">
+          <div class="project__image">
+            <div class="project__placeholder">
+              <span>Project 3</span>
+            </div>
+          </div>
+          <div class="project__content">
+            <h3 class="project__title">Weather Dashboard</h3>
+            <p class="project__description">
+              A weather dashboard with location-based forecasts, interactive maps,
+              and historical data visualization.
+            </p>
+            <ul class="project__tags">
+              <li>JavaScript</li>
+              <li>REST API</li>
+              <li>Chart.js</li>
+            </ul>
+            <div class="project__links">
+              <a href="#" class="btn btn--small" aria-label="View live demo of Weather Dashboard">Live Demo</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Weather Dashboard">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project__card">
+          <div class="project__image">
+            <div class="project__placeholder">
+              <span>Project 4</span>
+            </div>
+          </div>
+          <div class="project__content">
+            <h3 class="project__title">Portfolio Generator</h3>
+            <p class="project__description">
+              A CLI tool that generates customizable portfolio websites from
+              a simple configuration file.
+            </p>
+            <ul class="project__tags">
+              <li>Python</li>
+              <li>Jinja2</li>
+              <li>CLI</li>
+            </ul>
+            <div class="project__links">
+              <a href="#" class="btn btn--small" aria-label="View live demo of Portfolio Generator">Live Demo</a>
+              <a href="#" class="btn btn--small btn--outline" aria-label="View source code of Portfolio Generator">Source Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <h2 class="section__title">Get in Touch</h2>
+      <p class="section__subtitle">Have a project in mind? Let&rsquo;s talk.</p>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <div class="contact__item">
+            <span class="contact__icon" aria-hidden="true">&#9993;</span>
+            <div>
+              <h3>Email</h3>
+              <p>hello@johndoe.dev</p>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon" aria-hidden="true">&#9742;</span>
+            <div>
+              <h3>Location</h3>
+              <p>San Francisco, CA</p>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon" aria-hidden="true">&#128279;</span>
+            <div>
+              <h3>Social</h3>
+              <div class="social__links">
+                <a href="#" class="social__link" aria-label="GitHub profile">GitHub</a>
+                <a href="#" class="social__link" aria-label="LinkedIn profile">LinkedIn</a>
+                <a href="#" class="social__link" aria-label="Twitter profile">Twitter</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="form__group">
+            <label for="name" class="form__label">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form__input"
+              placeholder="Your name"
+              required
+              autocomplete="name"
+            >
+            <span class="form__error" id="name-error"></span>
+          </div>
+
+          <div class="form__group">
+            <label for="email" class="form__label">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form__input"
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+            >
+            <span class="form__error" id="email-error"></span>
+          </div>
+
+          <div class="form__group">
+            <label for="message" class="form__label">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              class="form__input form__textarea"
+              placeholder="Tell me about your project&hellip;"
+              rows="5"
+              required
+            ></textarea>
+            <span class="form__error" id="message-error"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          <p class="form__status" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <p>&copy; <span id="current-year"></span> John Doe. All rights reserved.</p>
+      <a href="#hero" class="footer__back-to-top" aria-label="Back to top">&uarr; Top</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
